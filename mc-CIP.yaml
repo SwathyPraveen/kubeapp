@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - port: 11211
-      targetPort: vpromc-port
+      targetPort: 11211  # Replace with the actual port number if not 11211
       protocol: TCP
   selector:
     app: vpromc
