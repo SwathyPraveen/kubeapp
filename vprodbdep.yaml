@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: vprodb
-    labels:
-      app: vprodb
+  name: vprodb
+  labels:
+    app: vprodb
 spec:
-  selecter:
+  selector: # Corrected typo here
     matchLabels:
       app: vprodb
   replicas: 1
@@ -33,7 +33,7 @@ spec:
       nodeSelector:
         zone: us-east-1a
       volumes:
-        - name: vpro-db-date
+        - name: vpro-db-data # Corrected typo here
           awsElasticBlockStore:
             volumeID: vol-069dd8a6a06565893
             fsType: ext4
@@ -45,5 +45,6 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
+
 
 
